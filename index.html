@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Urban Traffic Control Digital Twin</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="layout">
+      <section class="panel">
+        <p class="eyebrow">Smart City Systems</p>
+        <h1>Urban Traffic Control Digital Twin</h1>
+        <p class="desc">Simulate adaptive intersections and evaluate congestion relief strategies in real time.</p>
+
+        <div class="card">
+          <h2>Scenario Controls</h2>
+          <label>Traffic Demand
+            <input id="demandInput" type="range" min="0.6" max="2.4" step="0.1" value="1.4" />
+            <span id="demandValue">1.4</span>
+          </label>
+          <label>Adaptive Bias
+            <input id="adaptiveInput" type="range" min="0" max="1" step="0.05" value="0.65" />
+            <span id="adaptiveValue">0.65</span>
+          </label>
+          <label>Incident Risk
+            <input id="incidentInput" type="range" min="0" max="0.25" step="0.01" value="0.07" />
+            <span id="incidentValue">0.07</span>
+          </label>
+        </div>
+
+        <div class="card">
+          <h2>Controls</h2>
+          <div class="row">
+            <button id="startBtn">Start</button>
+            <button id="pauseBtn">Pause</button>
+          </div>
+          <div class="row">
+            <button id="incidentBtn">Inject Incident</button>
+            <button id="resetBtn">Reset</button>
+          </div>
+        </div>
+
+        <div class="card metrics">
+          <h2>City KPIs</h2>
+          <p>Avg Queue: <strong id="queueText">0</strong></p>
+          <p>Avg Speed: <strong id="speedText">0</strong></p>
+          <p>Delay Index: <strong id="delayText">0</strong></p>
+          <p>CO2 Proxy: <strong id="emissionText">0</strong></p>
+        </div>
+      </section>
+
+      <section class="map-wrap">
+        <canvas id="city" width="980" height="620"></canvas>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
